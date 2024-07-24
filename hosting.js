@@ -10,7 +10,8 @@ const PORT = 3000;
 
 const handler = async (req) => {
     const url = new URL(req.url);
-    const filePath = `./dist${url.pathname}`;
+    const pathname = url.pathname === '/' ? 'index.html' : url.pathname;
+    const filePath = `./dist${pathname}`;
 
     try {
         const fileContent = await Deno.readFile(filePath);
