@@ -22,7 +22,6 @@ const handler = async (req) => {
         });
     } catch (err) {
         if (err instanceof Deno.errors.NotFound) {
-
             try {
                 const indexContent = await Deno.readFile("./dist/index.html");
                 return new Response(indexContent, {

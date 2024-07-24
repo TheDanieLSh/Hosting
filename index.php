@@ -15,7 +15,7 @@ $requestedFile = $root . $uri;
 
 if (file_exists($requestedFile) && !is_dir($requestedFile)) {
     $mimeType = mime_content_type($requestedFile);
-    header('Content-Type: ' . $mimeType);
+    header("Content-Type: $mimeType");
     readfile($requestedFile);
     exit;
 } else {
